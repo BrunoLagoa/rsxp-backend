@@ -29,6 +29,7 @@ class UserSchema extends Schema {
       table.string("data_nascimento");
       table.string("genero");
 
+      // Pessoa responsável pela escola
       table.string("referencia");
 
       table.interger("score");
