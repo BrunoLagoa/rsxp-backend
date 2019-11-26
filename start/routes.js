@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 /*
 |--------------------------------------------------------------------------
@@ -14,47 +14,14 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Route = use("Route");
 
-Route.get('/', () => {
-  return { v1: 'API REST RSXP' }
-})
-
-/**
- * ROUTE SESSION JWT
- */
-Route.post('sessions', 'SessionController.store').validator('Session')
+Route.get("/", () => {
+  return { v1: "API REST RSXP" };
+});
 
 /**
  * ROUTE USUARIO
  */
-Route.get('users', 'UserController.index').middleware(['auth'])
-Route.post('users', 'UserController.store').validator('User')
-
-/**
- * ROUTE FORGOT PASSWORD
- */
-// Route.post('passwords', 'ForgotPasswordController.store').validator(
-//   'ForgotPassword'
-// )
-// Route.put('passwords', 'ForgotPasswordController.update').validator(
-//   'ResetPassword'
-// )
-
-/**
- * ROUTE FILE
- */
-Route.group(() => {
-  Route.resource('files', 'FileController')
-    .apiOnly()
-    .except(['show', 'update'])
-    .validator(new Map([[['files.store'], ['File']]]))
-}).middleware(['auth'])
-Route.get('files/:id', 'FileController.show')
-
-/**
- * ROUTE GROUP
- */
-Route.group(() => {
-  // ROUTE PERFIL USER
-  Route.resource('perfiluser', 'PerfilUserController').apiOnly()
+Route.get("users", "UserController.index");
+Route.post("users", "UserController.store");
