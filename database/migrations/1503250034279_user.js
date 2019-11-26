@@ -7,13 +7,32 @@ class UserSchema extends Schema {
   up() {
     this.create("users", table => {
       table.increments();
+
       table.string("username", 80).notNullable();
       table
         .string("email", 254)
         .notNullable()
         .unique();
       table.string("password", 60).notNullable();
-      table.integer("user_id").defaultTo(0);
+
+      table.interger("user_type");
+
+      table.string("cpf");
+      table.string("telefone");
+
+      table.string("endereco");
+      table.string("estado");
+      table.string("cidade");
+
+      table.text("descricao");
+
+      table.string("data_nascimento");
+      table.string("genero");
+
+      table.string("referencia");
+
+      table.interger("score");
+
       table.timestamps();
     });
   }
