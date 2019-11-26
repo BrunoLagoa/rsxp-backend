@@ -1,16 +1,41 @@
 "use strict";
 
 const User = use("App/Models/User");
-const Profile = use("App/Models/Profile");
 
 class UserController {
-  async store({ request }) {
-    const data = request.only(["username", "email", "password"]);
+  async index({ request, response, view }) {
+    const users = await User.query().fetch();
 
-    const user = await User.create(data);
-    await Profile.create({ user_id: user.id });
+    return users;
+  }
 
-    return user;
+  async store({ request, response }) {
+    try {
+      const data = request.only([
+        "username",
+        "email",
+        "password",
+        "user_type",
+        "cpf",
+        "phone",
+        "address",
+        "state",
+        "city",
+        "description",
+        "date_birth",
+        "genre",
+        "reference",
+        "score"
+      ]);
+
+      const user = await User.create(data);
+
+      return user;
+    } catch (error) {
+      return response
+        .status(401)
+        .send("Ops. Algo deu errado, tente novamente.");
+    }
   }
 }
 

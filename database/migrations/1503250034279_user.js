@@ -15,23 +15,23 @@ class UserSchema extends Schema {
         .unique();
       table.string("password", 60).notNullable();
 
-      table.interger("user_type").default(1);
+      table.integer("user_type").default(1);
 
       table.string("cpf");
-      table.string("telefone");
+      table.string("phone");
 
-      table.string("endereco");
-      table.string("estado");
-      table.string("cidade");
+      table.string("address");
+      table.string("state");
+      table.string("city");
 
-      table.text("descricao");
+      table.text("description");
 
-      table.string("data_nascimento");
-      table.string("genero");
+      table.string("date_birth");
+      table.string("genre");
 
-      table.string("referencia");
+      table.string("reference");
 
-      table.interger("score").defaultTo(0);
+      table.integer("score").defaultTo(0);
 
       table.timestamps();
     });

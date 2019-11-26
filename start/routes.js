@@ -25,3 +25,4 @@ Route.get("/", () => {
  */
 Route.get("users", "UserController.index");
 Route.post("users", "UserController.store");
+Route.put("categories/:id", "CategoryController.update").middleware(["auth"]);
