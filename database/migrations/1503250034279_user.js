@@ -15,7 +15,7 @@ class UserSchema extends Schema {
         .unique();
       table.string("password", 60).notNullable();
 
-      table.interger("user_type");
+      table.interger("user_type").default(1);
 
       table.string("cpf");
       table.string("telefone");
@@ -31,7 +31,7 @@ class UserSchema extends Schema {
 
       table.string("referencia");
 
-      table.interger("score");
+      table.interger("score").defaultTo(0);
 
       table.timestamps();
     });
