@@ -39,8 +39,8 @@ class User extends Model {
     return this.belongsTo("App/Models/File", "avatar_id", "id");
   }
 
-  talks (){
-    return this.hasMany('App/Models/Talk', "talk_id", "id")
+  talks() {
+    return this.hasMany("App/Models/Talk", "talk_id", "id");
   }
 }
 
