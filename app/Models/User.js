@@ -38,6 +38,10 @@ class User extends Model {
   avatar() {
     return this.belongsTo("App/Models/File", "avatar_id", "id");
   }
+
+  talks (){
+    return this.hasMany('App/Models/Talk', "talk_id", "id")
+  }
 }
 
 module.exports = User;
