@@ -15,6 +15,9 @@
   "author": "",
   "license": "UNLICENSED",
   "private": true,
+  "engines": {
+    "node": "13.1.0"
+  },
   "dependencies": {
     "@adonisjs/ace": "^5.0.8",
     "@adonisjs/auth": "^3.0.7",
