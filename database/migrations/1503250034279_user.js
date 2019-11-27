@@ -33,6 +33,9 @@ class UserSchema extends Schema {
 
       table.integer("score").defaultTo(0);
 
+      table.string("token");
+      table.string("token_created_at");
+
       table.timestamps();
     });
   }
