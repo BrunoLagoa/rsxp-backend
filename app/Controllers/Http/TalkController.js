@@ -19,7 +19,11 @@ class TalkController {
    * @param {View} ctx.view
    */
   async index({ request, response, view }) {
-    const talks = await Talk.query().fetch();
+    const talks = await Talk.query()
+      .with("course")
+      .with("speaker")
+      .with("school")
+      .fetch();
 
     return talks;
   }
