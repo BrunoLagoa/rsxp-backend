@@ -27,3 +27,12 @@ Route.get("users", "UserController.index");
 Route.post("users", "UserController.store");
 Route.put("users/:id", "UserController.update");
 Route.get("users/:id", "UserController.show");
+
+Route.post("sessions", "SessionController.store");
+
+// Route.post("passwords", "ForgotPasswordController.store");
+// Route.put("passwords", "ForgotPasswordController.update");
+
+Route.get("/files", "FileController.index");
+Route.get("/files/:id", "FileController.show");
+Route.post("/files", "FileController.store");
