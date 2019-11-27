@@ -20,3 +20,14 @@ Route.put("passwords", "ForgotPasswordController.update");
 Route.get("/files", "FileController.index");
 Route.get("/files/:id", "FileController.show");
 Route.post("/files", "FileController.store");
+
+
+//Talks router where return SPEAKER,SCHOOL and date/hour
+Route.get("talks", "TalksController.index");
+Route.post("talks", "TalksController.store");
+Route.put("talks/:id", "TalksController.update");
+
+//courses routers return default courses to be used into Talks
+Route.get("courses", "CoursesController.index");
+Route.post("courses", "CoursesController.store");
+Route.put("courses/:id", "CoursesController.update");
