@@ -72,7 +72,16 @@ class TalkController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update({ params, request, response }) {}
+  async update({ params, request, response }) {
+    const talk = await Talk.findOrFail(params.id);
+    const data = request.only(["date"]);
+
+    talk.merge(data);
+
+    await talk.save();
+
+    return talk;
+  }
 
   /**
    * Delete a talk with id.
