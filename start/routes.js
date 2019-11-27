@@ -26,3 +26,12 @@ Route.get("/", () => {
 Route.get("users", "UserController.index");
 Route.post("users", "UserController.store");
 Route.put("categories/:id", "CategoryController.update").middleware(["auth"]);
+
+
+Route.get("talks", "TalksController.index");
+Route.post("talks", "TalksController.store");
+Route.put("talks/:id", "TalksController.update");
+
+Route.get("courses", "CoursesController.index");
+Route.post("courses", "CoursesController.store");
+Route.put("courses/:id", "CoursesController.update");
