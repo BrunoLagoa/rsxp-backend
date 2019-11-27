@@ -21,13 +21,14 @@ Route.get("/files", "FileController.index");
 Route.get("/files/:id", "FileController.show");
 Route.post("/files", "FileController.store");
 
-
 //Talks router where return SPEAKER,SCHOOL and date/hour
-Route.get("talks", "TalksController.index");
-Route.post("talks", "TalksController.store");
-Route.put("talks/:id", "TalksController.update");
+Route.get("talks", "TalkController.index");
+Route.post("talks", "TalkController.store");
+Route.get("talks/:id", "TalkController.show");
+Route.put("talks/:id", "TalkController.update");
 
 //courses routers return default courses to be used into Talks
-Route.get("courses", "CoursesController.index");
-Route.post("courses", "CoursesController.store");
-Route.put("courses/:id", "CoursesController.update");
+Route.get("courses", "CourseController.index");
+Route.get("courses", "CourseController.show");
+Route.post("courses", "CourseController.store");
+Route.put("courses/:id", "CourseController.update");

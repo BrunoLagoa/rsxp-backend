@@ -19,9 +19,9 @@ class TalkController {
    * @param {View} ctx.view
    */
   async index({ request, response, view }) {
-    const talk = await Talk.findOrFail("id", request.params.id);
+    const talks = await Talk.query().fetch();
 
-    return talk;
+    return talks;
   }
 
   /**
@@ -50,7 +50,12 @@ class TalkController {
    * @param {View} ctx.view
    */
   async show({ params, request, response, view }) {
-    const talk = await Talk.findOrFail(request.params.id);
+    const talk = await Talk.query()
+      .where("id", request.params.id)
+      .with("course")
+      .with("speaker")
+      .with("school")
+      .first();
 
     return talk;
   }

@@ -35,7 +35,7 @@ class TalkSchema extends Schema {
         .onDelete("SET NULL")
         .notNullable();
 
-      table.date("date");
+      table.string("date");
 
       table.timestamps();
     });
